@@ -15,16 +15,16 @@ on:
 
 env:
   # Set the Azure Resource Group name
-  AzureResourceGroup: YOUR_RESOURCE_GROUP_NAME
+  AzureResourceGroup: euluisdevops
   # Set the Azure LUIS Authoring Resource name
-  AzureLuisAuthoringResourceName: YOUR_LUIS_AUTHORING_RESOURCE_NAME
+  AzureLuisAuthoringResourceName: euLUISDevOpsResource-Authoring
   # Set the Azure LUIS Prediction Resource name
-  AzureLuisPredictionResourceName: YOUR_LUIS_PREDICTION_RESOURCE_NAME
+  AzureLuisPredictionResourceName: euLUISDevOpsResource-Prediction
   # Set the Azure Storage Account name
-  AzureStorageAccountName: yourstorageaccountname
+  AzureStorageAccountName: euluisdevopsstorage
   
   # Set the name of the master LUIS app
-  LUIS_MASTER_APP_NAME: LUISDevOps-master
+  LUIS_MASTER_APP_NAME: ueLUISDevOps-master
   # If your repository is Private, set this to true
   IS_PRIVATE_REPOSITORY: false
 
