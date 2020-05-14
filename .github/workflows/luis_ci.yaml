@@ -168,11 +168,11 @@ jobs:
         name: UnitTestResult
         path: unittest/TestResult.xml      
 
-    # Delete the LUIS app again if we are executing as gate check on a PR
-    - name: Delete luis test target app
-      if: always() && (github.event_name == 'pull_request')
-      shell: bash
-      run:  bf luis:application:delete --appId $AppId --endpoint $luisAuthoringEndpoint --subscriptionKey ${{ secrets.LUISAuthoringKey }} --force
+   ## Delete the LUIS app again if we are executing as gate check on a PR
+   #- name: Delete luis test target app
+   #  if: always() && (github.event_name == 'pull_request')
+   #  shell: bash
+   #  run:  bf luis:application:delete --appId $AppId --endpoint $luisAuthoringEndpoint --subscriptionKey ${{ secrets.LUISAuthoringKey }} --force
 
 
   # Job: LUIS quality testing
