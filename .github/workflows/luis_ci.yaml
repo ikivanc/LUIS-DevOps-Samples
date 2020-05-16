@@ -23,8 +23,8 @@ env:
   # Set the Azure Storage Account name
   AzureStorageAccountName: euluisdevopsstorage
   
-  # Set the name of the master LUIS app
-  LUIS_MASTER_APP_NAME: ueLUISDevOps-master
+    # Set the name of the master LUIS app
+  LUIS_MASTER_APP_NAME: LUISDevOps-master
   # If your repository is Private, set this to true
   IS_PRIVATE_REPOSITORY: false
 
@@ -168,11 +168,11 @@ jobs:
         name: UnitTestResult
         path: unittest/TestResult.xml      
 
-   ## Delete the LUIS app again if we are executing as gate check on a PR
-   #- name: Delete luis test target app
-   #  if: always() && (github.event_name == 'pull_request')
-   #  shell: bash
-   #  run:  bf luis:application:delete --appId $AppId --endpoint $luisAuthoringEndpoint --subscriptionKey ${{ secrets.LUISAuthoringKey }} --force
+    # Delete the LUIS app again if we are executing as gate check on a PR
+    - name: Delete luis test target app
+      if: always() && (github.event_name == 'pull_request')
+      shell: bash
+      run:  bf luis:application:delete --appId $AppId --endpoint $luisAuthoringEndpoint --subscriptionKey ${{ secrets.LUISAuthoringKey }} --force
 
 
   # Job: LUIS quality testing
